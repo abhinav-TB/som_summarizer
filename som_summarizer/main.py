@@ -31,7 +31,7 @@ class summarizer:
             summary.append(self.org_mapping[sorted(cluster,key=lambda x:self.scores[x],reverse = True)[0]])
         summary = sorted(summary,key = lambda x:self.pos_mapping[x])  # sorting to preserve order
         self.summary = "".join(summary)
-        print(self.summary)
+        return self.summary
 
     def create_mappings(self):
         for i ,sentence in enumerate(self.text_tokens):
