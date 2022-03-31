@@ -13,7 +13,6 @@ class preprocessing:
         self.text = None
         self.text_tokens = None
     
-
     def __call__(self , text:string) -> None:
         self.text = text 
         self.tokensize()
@@ -22,12 +21,9 @@ class preprocessing:
         self.lemmatize()
         return self.text_tokens
 
-    
     def tokensize(self):
         self.text_tokens = sent_tokenize(self.text)
 
-
-    
     def remove_punctuation(self):
         for i in range(len(self.text_tokens)):
             self.text_tokens[i] = "".join([i for  i in self.text_tokens[i] if i not in string.punctuation])
