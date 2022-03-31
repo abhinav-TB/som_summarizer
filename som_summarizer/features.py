@@ -3,6 +3,7 @@ import math
 import nltk
 from nltk.tokenize import sent_tokenize
 from collections import Counter
+nltk.download('averaged_perceptron_tagger')
 class features:
     def __init__(self,text_tokens):
         self.text_tokens = text_tokens
@@ -32,7 +33,6 @@ class features:
 
     def noun_numerical_count(self):
         # NOUN AND NUMERAL COUNTS
-        nltk.download('averaged_perceptron_tagger')
         sentence = ''
         # initializing weights for nouns and numerals
         nounwt = 0.3 

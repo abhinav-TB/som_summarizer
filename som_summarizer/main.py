@@ -2,11 +2,11 @@ from .preprocessing import preprocessor
 from .features import features
 from .som import som
 class summarizer:
-    def __init__(self,epochs,m=3,n=4) -> None:
+    def __init__(self,epochs) -> None:
         self.input = None
         self.org_tokens = None 
-        self.m = m
-        self.n = n
+#         self.m = m
+#         self.n = n
         self.pos_mapping = {}
         self.org_mapping = {}   
         self.epochs = epochs
@@ -18,7 +18,9 @@ class summarizer:
         self.pre_process()# text_tokens mapping to org sentence
         self.create_mappings()
         f = features(self.text_tokens)
-        self.scores = f.score() 
+        self.scores = f.score()
+        self.m = 1
+        self.n = int(len(self.text_tokens)*0.2)
         s = som(self.m,self.n,self.epochs,self.text_tokens)
         self.predictions = s.predict()
         cluster_len = self.m*self.n
