@@ -3,15 +3,17 @@ import nltk
 from nltk.tokenize import sent_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
+nltk.download('wordnet')
 nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('omw-1.4')
 # nltk.download('wordnet')
 
-class preprocessing:
+class preprocessor:
     def __init__(self):
         self.text = None
         self.text_tokens = None
+        self.org_tokens = None
     
     def __call__(self , text:string) -> None:
         self.text = text 
@@ -19,10 +21,11 @@ class preprocessing:
         self.remove_punctuation()
         self.remove_stopwords()
         self.lemmatize()
-        return self.text_tokens
+        return self.text_tokens , self.org_tokens
 
     def tokensize(self):
         self.text_tokens = sent_tokenize(self.text)
+        self.org_tokens = self.text_tokens.copy()
 
     def remove_punctuation(self):
         for i in range(len(self.text_tokens)):
