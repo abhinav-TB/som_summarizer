@@ -20,7 +20,7 @@ class summarizer:
         f = features(self.text_tokens)
         self.scores = f.score()
         self.m = 1
-        self.n = int(len(self.text_tokens)*0.2)
+        self.n = max(int(len(self.text_tokens)*0.2),1)
         s = som(self.m,self.n,self.epochs,self.text_tokens)
         self.predictions = s.predict()
         cluster_len = self.m*self.n
