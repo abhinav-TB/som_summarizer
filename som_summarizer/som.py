@@ -7,9 +7,7 @@ class som:
         self.epochs = epochs
 
     def predict(self):
-        print(len(self.text_tokens))
         sentence_embeddings = self.generate_embeddings()
-        print(len(sentence_embeddings))
         self.som_obj.fit(sentence_embeddings , self.epochs)
         return self.som_obj.predict(sentence_embeddings)
     def generate_embeddings(self):
