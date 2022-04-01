@@ -45,5 +45,10 @@ class summarizer:
     def pre_process(self):
         preprocesor = preprocessor()
         self.text_tokens ,self.org_tokens = preprocesor(self.input)
+        for i, token in enumerate(self.text_tokens):
+            if token == "":
+                self.text_tokens.pop(i)
+                self.org_tokens.pop(i)
+
         
 
