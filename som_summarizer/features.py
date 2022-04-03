@@ -35,8 +35,8 @@ class features:
         # NOUN AND NUMERAL COUNTS
         sentence = ''
         # initializing weights for nouns and numerals
-        nounwt = 0.3 
-        numwt = 0.7
+        nounwt = 0.4 
+        numwt = 0.6
 
         for t in self.text_tokens:
             sentence = sentence + t + '. '
