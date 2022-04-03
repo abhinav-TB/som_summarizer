@@ -23,8 +23,12 @@ class summarizer:
         sz = int(len(self.text_tokens)*0.2)
         factors = list( primefac.primefac(sz) )
         factors.sort(reverse=True)
-        self.m = factors[0]
-        self.n = int(sz/factors[0])
+        if not factors:
+            self.m = 1
+            self.n = 1
+        else:
+            self.m = factors[0]
+            self.n = int(sz/factors[0])
         s = som(self.m,self.n,self.epochs,self.text_tokens)
         self.predictions = s.predict()
         cluster_len = max(self.predictions) + 1
