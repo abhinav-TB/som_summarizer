@@ -27,7 +27,7 @@ class summarizer:
         self.n = int(sz/factors[0])
         s = som(self.m,self.n,self.epochs,self.text_tokens)
         self.predictions = s.predict()
-        cluster_len = self.m*self.n
+        cluster_len = max(self.predictions) + 1
         clusters = [[] for _ in range(cluster_len)]
         for i , sentence in enumerate(self.text_tokens):
             clusters[self.predictions[i]].append(sentence)
