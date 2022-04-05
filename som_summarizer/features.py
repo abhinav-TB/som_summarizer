@@ -25,7 +25,7 @@ class features:
         max = thresh * 2 * len(self.text_tokens)
         for i in range(0,len(self.text_tokens)):
             if ( i == 0 or i == (len(self.text_tokens) - 1) ):
-                tt[self.text_tokens[i]] = 2
+                tt[self.text_tokens[i]] = 4
             else:
                 tt[self.text_tokens[i]] = float(math.cos((i - min) / ((1 / max) - min )))
         

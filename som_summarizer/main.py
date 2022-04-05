@@ -1,17 +1,24 @@
 from .preprocessing import preprocessor
 from .features import features
 from .som import som
+from math import ceil
 import primefac
 class summarizer:
-    def __init__(self,epochs) -> None:
+    def __init__(self,epochs,sumSize) -> None:
         self.input = None
         self.org_tokens = None 
-#         self.m = m
-#         self.n = n
         self.pos_mapping = {}
         self.org_mapping = {}   
         self.epochs = epochs
         self.text_tokens = None
+        factors = list( primefac.primefac(sumSize) )
+        factors.sort(reverse=True)
+        if not factors:
+            self.m = 1
+            self.n = 1
+        else:
+            self.m = factors[0]
+            self.n = int(sumSize/factors[0])
 
     
     def generate_summary(self,input):
@@ -20,15 +27,6 @@ class summarizer:
         self.create_mappings()
         f = features(self.text_tokens)
         self.scores = f.score()
-        sz = int(len(self.text_tokens)*0.2)
-        factors = list( primefac.primefac(sz) )
-        factors.sort(reverse=True)
-        if not factors:
-            self.m = 1
-            self.n = 1
-        else:
-            self.m = factors[0]
-            self.n = int(sz/factors[0])
         s = som(self.m,self.n,self.epochs,self.text_tokens)
         self.predictions = s.predict()
         cluster_len = max(self.predictions) + 1
