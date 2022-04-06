@@ -6,8 +6,6 @@ class summarizer:
     def __init__(self,epochs,m=None,n=None) -> None:
         self.input = None
         self.org_tokens = None 
-#         self.m = m
-#         self.n = n
         self.pos_mapping = {}
         self.org_mapping = {}   
         self.epochs = epochs
