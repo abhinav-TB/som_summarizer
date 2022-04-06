@@ -3,7 +3,7 @@ from .features import features
 from .som import som
 import primefac
 class summarizer:
-    def __init__(self,epochs) -> None:
+    def __init__(self,epochs,m=None,n=None) -> None:
         self.input = None
         self.org_tokens = None 
 #         self.m = m
@@ -22,7 +22,6 @@ class summarizer:
         self.scores = f.score()
         sz = int(len(self.text_tokens)*0.2)
         factors = list( primefac.primefac(sz) )
-        print(sz,factors)
         factors.sort(reverse=True)
         if not factors:
             self.m = 1
