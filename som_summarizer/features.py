@@ -1,4 +1,4 @@
-from .utils import tf_idf
+from .tfidf import tf_idf
 import math
 import nltk
 from nltk.tokenize import sent_tokenize

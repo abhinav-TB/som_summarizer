@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="som-summarizer",
-    version="1.0.3",
+    version="1.0.4",
     description="Summarize long ducuments of all types",
     long_description=README,
     long_description_content_type="text/markdown",
