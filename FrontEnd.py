@@ -1,8 +1,6 @@
 import streamlit as st
 from som_summarizer import summarizer
-import spacy
-
-nlp = spacy.load('en_core_web_sm')
+from nltk.tokenize import sent_tokenize
 
 st.write('''
 # SOMmarizer
@@ -14,8 +12,7 @@ st.write('''
 x = st.text_area('Input text to summarize', placeholder='Text goes here')
 
 count = 0
-doc = nlp(x)
-for sent in doc.sents:
+for sent in sent_tokenize(x):
     count += 1
 
 if x :
