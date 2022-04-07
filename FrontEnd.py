@@ -11,7 +11,7 @@ st.write('''
 
 x = st.text_area('Input text to summarize', placeholder='Text goes here')
 
-st.button('Analyse')
+st.button('Analyze')
 
 count = 0
 for sent in sent_tokenize(x):
@@ -19,7 +19,7 @@ for sent in sent_tokenize(x):
 
 if x :
     n = st.slider('Number of sentences in summary :',min_value=1,max_value=count)
-    if st.button('Make the Summary'):
+    if st.button('Summarize'):
         summer = summarizer(250,n)
         summary = summer.generate_summary(x)
         st.write(summary)
