@@ -11,7 +11,10 @@ Python 3.6+ (tested on python 3.8)
 
 
    ```sh
-   git clone https://github.com/abhinav-TB/Time-Series-Forecasting-Uisng-LSTM.git
+   git clone https://github.com/abhinav-TB/text-summarization.git
+   ```
+   ```
+   cd text-summarization
    ```
    ```sh
    pip install .
@@ -26,7 +29,27 @@ s = summarizer(epochs=100 ) # epochs for som training
 print(s.generate_summary(input))
 ```
 For  demo run the demo.py file in the root directory
+## Local development setup
+
+1.Clone the repository
+```
+git clone https://github.com/abhinav-TB/text-summarization.git
+```
+2.Change directory
+```
+cd text-summarization
+```
+2.Install the dependencies
+
+```
+pip install -r requirements.txt
+```
+## Testing
+
+```
+pytest .
+```
 ##  License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the Apache License. See `LICENSE` for more information.
 
