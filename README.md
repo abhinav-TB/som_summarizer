@@ -1,6 +1,10 @@
 # som_summarizer
 ## Prerequisite
-Python 3.6+ (tested on python 3.8)
+- Python 3.6+ (tested on python 3.8)
+- nltk
+- sklearn-som
+- sentence-transformers
+- primefac
 
 ## Installation
 
