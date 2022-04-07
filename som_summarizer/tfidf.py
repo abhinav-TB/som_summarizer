@@ -2,11 +2,28 @@ import math
 from nltk import  word_tokenize
 
 class tf_idf:
+    """
+    calculate the tfidf score of a sentence
+    """
     def __init__(self,text_tokens):
+        """
+        initializing the class with the text tokens
+        """
         self.text_tokens = text_tokens
         self.tfid = {}
 
     def score(self) -> dict:
+        """
+        score a sentence by its word's Term frequency Inverse Document frequency
+        Basic algorithm: adding the TF frequency of every non-stop word in a sentence divided by total no of words in a sentence.
+
+        parameters:
+        none
+
+        returns:
+        score of each sentence
+        """
+        
         total_documents = len(self.text_tokens)
         freq_matrix = self.create_frequency_matrix(self.text_tokens)
 

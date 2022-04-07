@@ -4,21 +4,47 @@ import nltk
 from nltk.tokenize import sent_tokenize
 from collections import Counter
 nltk.download('averaged_perceptron_tagger')
+
+
 class features:
+    """
+    formulate scores and returns the score of the sentence
+ 
+     """
+
     def __init__(self,text_tokens):
+        """
+        Initialize the class with the text tokens
+        
+        parameters:
+        text_tokens: list of text tokens
+
+      """
         self.text_tokens = text_tokens
 
     def score(self):
+        """
+        returns the score of the sentence
+        
+        """
         tf_idf_score = self.tfidf()
         sentence_position_score = self.sentence_position()
         noun_numerical_count_score = self.noun_numerical_count()
         return {**tf_idf_score, **sentence_position_score, **noun_numerical_count_score}
 
     def tfidf(self):
+        """
+        returns the tfidf score of the sentence
+        
+        """
         tfidf = tf_idf(self.text_tokens)
         return tfidf.score()
 
     def sentence_position(self):
+        """
+        returns the sentence position score of the sentence
+
+        """
         tt = dict()
         thresh = len(self.text_tokens) * 0.2
         min = thresh * len(self.text_tokens)
@@ -32,6 +58,9 @@ class features:
         return tt
 
     def noun_numerical_count(self):
+        """
+        returns the noun numerical count score of the sentence
+        """
         # NOUN AND NUMERAL COUNTS
         sentence = ''
         # initializing weights for nouns and numerals
