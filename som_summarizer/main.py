@@ -3,7 +3,22 @@ from .features import features
 from .som import som
 import primefac
 class summarizer:
+    """
+    abstracts the entire summarization procedure 
+    """
     def __init__(self,epochs,m=None,n=None) -> None:
+        """
+        initializes the summarizer
+
+        Parameters
+        ----------
+        epochs : int
+            number of epochs for the som
+        m : int
+            number of rows in the som
+        n : int
+            number of columns in the som
+        """
         self.input = None
         self.org_tokens = None 
         self.pos_mapping = {}
@@ -13,6 +28,19 @@ class summarizer:
 
     
     def generate_summary(self,input):
+        """
+        generates the summary
+
+        Parameters
+        ----------
+        input : str
+            input text to be summarized
+        
+        Returns
+        -------
+        str
+            summary of the input text
+        """
         self.input = input
         self.pre_process()# text_tokens mapping to org sentence
         self.create_mappings()
@@ -43,6 +71,9 @@ class summarizer:
         return self.summary
 
     def create_mappings(self):
+        """
+        creates the mappings between the original sentence and the text tokens
+        """
         for i ,sentence in enumerate(self.text_tokens):
             self.org_mapping[sentence] = self.org_tokens[i]
 
@@ -50,6 +81,9 @@ class summarizer:
             self.pos_mapping[sentence] = i
 
     def pre_process(self):
+        """
+        preprocesses the input text
+        """
         preprocesor = preprocessor()
         self.text_tokens ,self.org_tokens = preprocesor(self.input)
         for i, token in enumerate(self.text_tokens):

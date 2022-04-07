@@ -1,3 +1,4 @@
 nltk
 sklearn-som
 sentence-transformers
+primefac
