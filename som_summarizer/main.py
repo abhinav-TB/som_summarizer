@@ -4,21 +4,21 @@ from .som import som
 from math import ceil
 import primefac
 class summarizer:
-    def __init__(self,epochs,sumSize) -> None:
+    def __init__(self,epochs,sumSz) -> None:
         self.input = None
         self.org_tokens = None 
         self.pos_mapping = {}
         self.org_mapping = {}   
         self.epochs = epochs
         self.text_tokens = None
-        factors = list( primefac.primefac(sumSize) )
+        factors = list( primefac.primefac(sumSz) )
         factors.sort(reverse=True)
         if not factors:
             self.m = 1
             self.n = 1
         else:
             self.m = factors[0]
-            self.n = int(sumSize/factors[0])
+            self.n = int(sumSz/factors[0])
 
     
     def generate_summary(self,input):
