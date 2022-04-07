@@ -26,6 +26,22 @@ s = summarizer(epochs=100 ) # epochs for som training
 print(s.generate_summary(input))
 ```
 For  demo run the demo.py file in the root directory
+## Local development setup
+
+1.Clone the repository
+```
+   git clone https://github.com/abhinav-TB/Time-Series-Forecasting-Uisng-LSTM.git
+```
+2.Install the depandencies
+
+```
+   pip install -r requirements.txt
+```
+## Testing
+
+```
+pytest .
+```
 ##  License
 
 Distributed under the MIT License. See `LICENSE` for more information.
