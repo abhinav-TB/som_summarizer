@@ -2,3 +2,4 @@ nltk
 sklearn-som
 sentence-transformers
 streamlit
+primefac
