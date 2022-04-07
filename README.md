@@ -8,6 +8,9 @@ Python 3.6+ (tested on python 3.8)
 ```
    git clone https://github.com/abhinav-TB/text-summarization.git
 ```
+```
+   cd text-summarization
+```
 2.Install the dependencies
 
 ```
