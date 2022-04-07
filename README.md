@@ -53,8 +53,8 @@ pip install -r requirements.txt
 ```
 pytest .
 ```
-## front-end
-Use [front-end](https://github.com/abhinav-TB/text-summarization/tree/FrontEnd) branch for installation instructions 
+## web app demo
+Use [front-end](https://github.com/abhinav-TB/text-summarization/tree/FrontEnd) branch for further installation instructions 
 ##  License
 
 Distributed under the Apache License. See `LICENSE` for more information.
