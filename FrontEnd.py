@@ -9,7 +9,7 @@ st.write('''
 *****
 ''')
 
-x = st.text_area('Input text to summarize', placeholder='Text goes here')
+x = st.text_area('Input text to summarize', placeholder='Text goes here',height=300)
 
 st.button('Analyze')
 
