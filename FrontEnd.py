@@ -21,6 +21,9 @@ if x :
     n = st.slider('Number of sentences in summary :',min_value=1,max_value=count)
     if st.button('Summarize'):
         summer = summarizer(250,n)
-        summary = summer.generate_summary(x)
-        st.write(summary)
-        st.download_button(label='Download Summary',data=summary,file_name='Your Summary.txt')
+        with st.spinner('Generating summary...'):
+            summary = summer.generate_summary(x)
+        st.success('Summary Generated Successfully!')
+        with st.expander('Summary'):
+            st.write(summary)
+            st.download_button(label='Download Summary',data=summary,file_name='Your Summary.txt')
