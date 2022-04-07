@@ -23,7 +23,9 @@ if x :
         summer = summarizer(250,n)
         with st.spinner('Generating summary...'):
             summary = summer.generate_summary(x)
-        st.success('Summary Generated Successfully!')
-        with st.expander('Summary'):
+        if summary:
+            st.success('Summary Generated Successfully!')
             st.write(summary)
             st.download_button(label='Download Summary',data=summary,file_name='Your Summary.txt')
+        else:
+            st.error('Encountered an unexpected error, Please try again.')
