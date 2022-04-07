@@ -30,12 +30,12 @@ For  demo run the demo.py file in the root directory
 
 1.Clone the repository
 ```
-   git clone https://github.com/abhinav-TB/Time-Series-Forecasting-Uisng-LSTM.git
+git clone https://github.com/abhinav-TB/Time-Series-Forecasting-Uisng-LSTM.git
 ```
-2.Install the depandencies
+2.Install the dependencies
 
 ```
-   pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 ## Testing
 
