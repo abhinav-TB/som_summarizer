@@ -8,20 +8,20 @@ Python 3.6+ (tested on python 3.8)
 ```
    git clone https://github.com/abhinav-TB/text-summarization.git
 ```
-  Change directory
+2. Change directory
 ```
    cd text-summarization
 ```
-2. Install the dependencies
+3. Install the dependencies
 
 ```
    pip install -r requirements.txt
 ``` 
-3. Change directory
+4. Change directory
 ```
   cd text-summarization 
 ```
-4. Run the app
+5. Run the app
 ```
  streamlit run FrontEnd.py
 ```
