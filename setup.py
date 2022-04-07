@@ -25,5 +25,5 @@ setup(
     ],
     packages=["som_summarizer"],
     include_package_data=True,
-    install_requires=["nltk", "sklearn-som","sentence-transformers"],
+    install_requires=["nltk==3.7", "sklearn-som","sentence-transformers==2.2.0","primefac"],
 )

@@ -90,6 +90,3 @@ class summarizer:
             if token == "":
                 self.text_tokens.pop(i)
                 self.org_tokens.pop(i)
-
-        
-
