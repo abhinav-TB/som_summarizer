@@ -43,7 +43,7 @@ git clone https://github.com/abhinav-TB/text-summarization.git
 ```
 cd text-summarization
 ```
-2.Install the dependencies
+3.Install the dependencies
 
 ```
 pip install -r requirements.txt
