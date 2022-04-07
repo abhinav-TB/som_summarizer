@@ -6,7 +6,7 @@ Python 3.6+ (tested on python 3.8)
 
 1.Clone the repository
 ```
-   git clone https://github.com/abhinav-TB/Time-Series-Forecasting-Uisng-LSTM.git
+   git clone https://github.com/abhinav-TB/text-summarization.git
 ```
 2.Install the dependencies
 
