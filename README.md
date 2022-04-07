@@ -8,6 +8,7 @@ Python 3.6+ (tested on python 3.8)
 ```
    git clone https://github.com/abhinav-TB/text-summarization.git
 ```
+ Change directory
 ```
    cd text-summarization
 ```
@@ -16,7 +17,7 @@ Python 3.6+ (tested on python 3.8)
 ```
    pip install -r requirements.txt
 ``` 
-3.change directory
+3.Change directory
 ```
   cd text-summarization 
 ```
