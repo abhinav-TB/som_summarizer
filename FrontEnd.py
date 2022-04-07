@@ -3,7 +3,7 @@ from som_summarizer import summarizer
 from nltk.tokenize import sent_tokenize
 
 st.write('''
-# SOMmarizer
+# Text Summarizer
 
 #### Performs extractive summarization on text using SOM neural network
 *****
