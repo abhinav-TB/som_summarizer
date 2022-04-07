@@ -11,6 +11,8 @@ st.write('''
 
 x = st.text_area('Input text to summarize', placeholder='Text goes here')
 
+st.button('Analyse')
+
 count = 0
 for sent in sent_tokenize(x):
     count += 1
