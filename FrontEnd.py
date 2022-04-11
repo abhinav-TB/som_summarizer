@@ -17,15 +17,19 @@ count = 0
 for sent in sent_tokenize(x):
     count += 1
 
-if x :
-    n = st.slider('Number of sentences in summary :',min_value=1,max_value=count)
+if count > 1 and x:
+    n = st.slider('Select number of sentences in summary ',min_value=1,max_value=count)
     if st.button('Summarize'):
         summer = summarizer(250,n)
-        try :
-            with st.spinner('Generating summary...'):
+        with st.spinner('Generating summary...'):
+            try:    
                 summary = summer.generate_summary(x)
+            except:
+                st.error('Encountered an unexpected error, Please try again.')
+            else:
                 st.success('Summary Generated Successfully!')
                 st.write(summary)
                 st.download_button(label='Download Summary',data=summary,file_name='Your Summary.txt')
-        except:
-            st.error('Encountered an unexpected error, Please try again.')
+else:
+    if x and count <= 1:
+        st.error('Not enough sentences in text. Try again.')
