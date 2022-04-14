@@ -3,3 +3,4 @@ sklearn-som
 sentence-transformers
 streamlit
 primefac
+redis
