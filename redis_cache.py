@@ -8,7 +8,6 @@ def check_cache(len,text):
   try:
     reply = json.loads(client.execute_command('JSON.GET', text))
     if reply['len'] == len:
-      print("cache hit")
       return reply['summary']
     else:
       print("cache miss")
