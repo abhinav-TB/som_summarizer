@@ -44,3 +44,5 @@ class som:
         """
         sbert_model = SentenceTransformer('sentence-transformers/all-mpnet-base-v2')
         return sbert_model.encode(self.text_tokens)
+
+
