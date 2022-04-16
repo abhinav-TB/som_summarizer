@@ -6,7 +6,7 @@ class summarizer:
     """
     abstracts the entire summarization procedure 
     """
-    def __init__(self,epochs,m=None,n=None) -> None:
+    def __init__(self,epochs,sum_size) -> None:
         """
         initializes the summarizer
 
@@ -25,6 +25,7 @@ class summarizer:
         self.org_mapping = {}   
         self.epochs = epochs
         self.text_tokens = None
+        self.sum_size = sum_size
 
     
     def generate_summary(self,input):
@@ -46,15 +47,14 @@ class summarizer:
         self.create_mappings()
         f = features(self.text_tokens)
         self.scores = f.score()
-        sz = int(len(self.text_tokens)*0.2)
-        factors = list( primefac.primefac(sz) )
+        factors = list( primefac.primefac(self.sum_size) )
         factors.sort(reverse=True)
         if not factors:
             self.m = 1
             self.n = 1
         else:
             self.m = factors[0]
-            self.n = int(sz/factors[0])
+            self.n = int(self.sum_size/factors[0])
     
         s = som(self.m,self.n,self.epochs,self.text_tokens)
         self.predictions = s.predict()
