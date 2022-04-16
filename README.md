@@ -28,8 +28,8 @@
 ```
 from som_summarizer import summarizer
 
-input = "" # text to be summarized
-s = summarizer(epochs=100 ) # epochs for som training
+input = ''' ''' #text to be summarized
+s = summarizer(sum_size= 4 ,epochs=100) # summary size and epoch size
 print(s.generate_summary(input))
 ```
 For  demo run the demo.py file in the root directory
