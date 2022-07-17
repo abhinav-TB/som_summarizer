@@ -37,7 +37,7 @@ For  demo run the demo.py file in the root directory
 
 1.Clone the repository
 ```
-git clone https://github.com/abhinav-TB/text-summarization.git
+git clone https://github.com/abhinav-TB/som_summarizer.git
 ```
 2.Change directory
 ```
