@@ -15,7 +15,7 @@
 
 
    ```sh
-   git clone https://github.com/abhinav-TB/text-summarization.git
+   git clone https://github.com/abhinav-TB/som_summarizer.git
    ```
    ```
    cd text-summarization
