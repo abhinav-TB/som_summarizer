@@ -1,4 +1,5 @@
 # som_summarizer
+A method to summarize the text in the English language has been proposed. The proposed method performs extractive summarization by clustering employing a deep neural network known as the self-organizing map.
 ## Prerequisite
 - Python 3.6+ (tested on python 3.8)
 - nltk
